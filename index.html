@@ -1,0 +1,4301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Templates Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --dark: #1e1e2e;
+            --darker: #13131a;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --shadow-xl: 0 35px 60px -15px rgb(0 0 0 / 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--light);
+        }
+
+        /* Section Base Styles */
+        .section {
+            width: 100%;
+            padding: 80px 20px;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Star Rating Component */
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+        }
+
+        .star.empty {
+            fill: var(--gray-300);
+        }
+
+        /* Avatar Component */
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        .avatar-lg {
+            width: 64px;
+            height: 64px;
+        }
+
+        .avatar-xl {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* ==========================================
+           SECTION 1: Classic Grid Layout
+           ========================================== */
+        .section-classic {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .classic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .classic-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-100);
+        }
+
+        .classic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .classic-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .classic-card-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .classic-card-info span {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .classic-card-text {
+            color: var(--gray-600);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .classic-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .classic-card-date {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        /* ==========================================
+           SECTION 2: Masonry Layout
+           ========================================== */
+        .section-masonry {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .section-masonry .section-title,
+        .section-masonry .section-subtitle {
+            color: white;
+        }
+
+        .section-masonry .section-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .masonry-grid {
+            columns: 3;
+            column-gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .masonry-grid { columns: 2; }
+        }
+
+        @media (max-width: 600px) {
+            .masonry-grid { columns: 1; }
+        }
+
+        .masonry-card {
+            break-inside: avoid;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .masonry-card:hover {
+            transform: scale(1.02);
+        }
+
+        .masonry-card.featured {
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+            color: white;
+        }
+
+        .masonry-card.featured .masonry-name {
+            color: white;
+        }
+
+        .masonry-card.featured .masonry-role {
+            color: var(--gray-400);
+        }
+
+        .masonry-card.featured .masonry-text {
+            color: var(--gray-300);
+        }
+
+        .masonry-quote {
+            font-size: 48px;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .masonry-card.featured .masonry-quote {
+            color: var(--accent);
+        }
+
+        .masonry-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .masonry-footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .masonry-name {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 15px;
+        }
+
+        .masonry-role {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* ==========================================
+           SECTION 3: Single Testimonial Slider
+           ========================================== */
+        .section-slider {
+            background: var(--light);
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .slider-slide {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .slider-image {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .slider-image img {
+            width: 300px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .slider-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .slider-content {
+            flex: 1;
+        }
+
+        .slider-quote-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .slider-quote-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .slider-text {
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .slider-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .slider-author {
+                justify-content: center;
+            }
+        }
+
+        .slider-author-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .slider-author-info span {
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--gray-200);
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .slider-btn:hover svg {
+            stroke: white;
+        }
+
+        .slider-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gray-600);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            width: 32px;
+            border-radius: 5px;
+            background: var(--primary);
+        }
+
+        /* ==========================================
+           SECTION 4: Dark Futuristic Cards
+           ========================================== */
+        .section-futuristic {
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-futuristic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+        }
+
+        .section-futuristic .section-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-futuristic .section-title {
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-futuristic .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        .section-futuristic .section-badge {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+        }
+
+        .futuristic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .futuristic-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .futuristic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ec4899, #8b5cf6, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .futuristic-card:hover::before {
+            opacity: 1;
+        }
+
+        .futuristic-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .futuristic-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .futuristic-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+        }
+
+        .futuristic-info h4 {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .futuristic-info span {
+            color: #ec4899;
+            font-size: 13px;
+        }
+
+        .futuristic-rating {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(245, 158, 11, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .futuristic-rating span {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .futuristic-text {
+            color: var(--gray-300);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .futuristic-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .futuristic-tag {
+            padding: 6px 14px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            color: #a78bfa;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* ==========================================
+           SECTION 5: Glassmorphism Cards
+           ========================================== */
+        .section-glass {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-glass::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .section-glass::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .section-glass .section-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-glass .section-title {
+            color: white;
+        }
+
+        .section-glass .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .section-glass .section-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .glass-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .glass-info {
+            flex: 1;
+        }
+
+        .glass-info h4 {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .glass-info span {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        .glass-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .glass-rating .star {
+            fill: var(--accent);
+        }
+
+        .glass-text {
+            color: rgba(255,255,255,0.85);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .glass-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .glass-date {
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+
+        .glass-helpful {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        .glass-helpful svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+        }
+
+        /* ==========================================
+           SECTION 6: Minimal Clean Cards
+           ========================================== */
+        .section-minimal {
+            background: #fafafa;
+        }
+
+        .minimal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .minimal-card {
+            padding: 32px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .minimal-card:last-child {
+            border-bottom: none;
+        }
+
+        .minimal-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .minimal-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .minimal-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 2px;
+        }
+
+        .minimal-verified {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--success);
+            font-size: 12px;
+        }
+
+        .minimal-verified svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .minimal-text {
+            color: var(--gray-600);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .minimal-footer {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .minimal-date {
+            color: var(--gray-400);
+            font-size: 13px;
+        }
+
+        /* ==========================================
+           SECTION 7: Magazine/Editorial Style
+           ========================================== */
+        .section-magazine {
+            background: white;
+        }
+
+        .magazine-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .magazine-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .magazine-featured {
+            position: relative;
+        }
+
+        .magazine-featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .magazine-featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            border-radius: 0 0 24px 24px;
+        }
+
+        .magazine-featured-text {
+            color: white;
+            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .magazine-featured-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .magazine-featured-author img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .magazine-featured-author h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .magazine-featured-author span {
+            color: var(--gray-400);
+            font-size: 13px;
+        }
+
+        .magazine-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .magazine-card {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .magazine-card:last-child {
+            border-bottom: none;
+        }
+
+        .magazine-card-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gray-200);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .magazine-card-content {
+            flex: 1;
+        }
+
+        .magazine-card-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .magazine-card-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .magazine-card-author img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+
+        .magazine-card-author h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .magazine-card-author span {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ==========================================
+           SECTION 8: Bubble/Chat Style
+           ========================================== */
+        .section-bubble {
+            background: linear-gradient(180deg, #f0f4ff 0%, #e8f5e9 100%);
+        }
+
+        .bubble-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .bubble-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .bubble-item.right {
+            flex-direction: row-reverse;
+        }
+
+        .bubble-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .bubble-content {
+            max-width: 80%;
+        }
+
+        .bubble-message {
+            background: white;
+            padding: 20px 24px;
+            border-radius: 24px 24px 24px 4px;
+            box-shadow: var(--shadow);
+            margin-bottom: 8px;
+        }
+
+        .bubble-item.right .bubble-message {
+            background: var(--primary);
+            color: white;
+            border-radius: 24px 24px 4px 24px;
+        }
+
+        .bubble-message p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .bubble-message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bubble-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 4px;
+        }
+
+        .bubble-item.right .bubble-meta {
+            flex-direction: row-reverse;
+        }
+
+        .bubble-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gray-800);
+        }
+
+        .bubble-time {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        /* ==========================================
+           SECTION 9: Horizontal Carousel
+           ========================================== */
+        .section-carousel {
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .section-carousel .section-title {
+            color: white;
+        }
+
+        .section-carousel .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .carousel-card {
+            width: 380px;
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--primary);
+        }
+
+        .carousel-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .carousel-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .carousel-info h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .carousel-info span {
+            color: var(--gray-400);
+            font-size: 13px;
+        }
+
+        .carousel-text {
+            color: var(--gray-300);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .carousel-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .carousel-rating .star {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ==========================================
+           SECTION 10: Timeline Style
+           ========================================== */
+        .section-timeline {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+
+        @media (max-width: 700px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 700px) {
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+                padding-left: 60px;
+            }
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        @media (max-width: 700px) {
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        .timeline-card {
+            flex: 1;
+            max-width: calc(50% - 60px);
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (max-width: 700px) {
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .timeline-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .timeline-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .timeline-info span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .timeline-text {
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ==========================================
+           SECTION 11: Card Stack / Grouped
+           ========================================== */
+        .section-grouped {
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        .section-grouped .section-title {
+            color: white;
+        }
+
+        .section-grouped .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        .grouped-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .grouped-stack {
+            position: relative;
+        }
+
+        .grouped-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--success);
+            color: white;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .grouped-label.warning {
+            background: var(--accent);
+        }
+
+        .grouped-label svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .grouped-cards {
+            position: relative;
+        }
+
+        .grouped-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .grouped-card:hover {
+            transform: translateX(8px);
+        }
+
+        .grouped-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .grouped-card-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .grouped-card-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .grouped-card-info span {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .grouped-card-text {
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           SECTION 12: Video Testimonial Style
+           ========================================== */
+        .section-video {
+            background: white;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .video-card {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .video-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--primary);
+        }
+
+        .video-play:hover svg {
+            fill: white;
+        }
+
+        .video-play svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary);
+            margin-left: 4px;
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            padding: 4px 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .video-content {
+            padding: 24px;
+            background: white;
+        }
+
+        .video-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .video-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .video-author img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .video-author h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .video-author span {
+            font-size: 13px;
+            color: var(--primary);
+        }
+
+        /* ==========================================
+           SECTION 13: Stats + Reviews Combo
+           ========================================== */
+        .section-stats {
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+        }
+
+        .section-stats .section-title {
+            color: white;
+        }
+
+        .section-stats .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .stats-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .stats-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stats-summary {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stats-number {
+            font-size: 80px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stats-label {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+
+        .stats-stars {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .stats-stars .star {
+            width: 32px;
+            height: 32px;
+            fill: var(--accent);
+        }
+
+        .stats-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .stats-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stats-bar-label {
+            color: white;
+            font-size: 14px;
+            width: 50px;
+        }
+
+        .stats-bar-track {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .stats-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .stats-bar-count {
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            width: 40px;
+            text-align: right;
+        }
+
+        .stats-reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stats-review-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .stats-review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .stats-review-content {
+            flex: 1;
+        }
+
+        .stats-review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .stats-review-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .stats-review-date {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .stats-review-text {
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ==========================================
+           SECTION 14: Social Proof Wall
+           ========================================== */
+        .section-social {
+            background: #fafafa;
+            overflow: hidden;
+        }
+
+        .social-wall {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 20px;
+            animation: slideLeft 60s linear infinite;
+        }
+
+        .social-row:nth-child(even) {
+            animation: slideRight 60s linear infinite;
+        }
+
+        @keyframes slideLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes slideRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .social-card {
+            flex-shrink: 0;
+            width: 320px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .social-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .social-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .social-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .social-info span {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .social-platform {
+            margin-left: auto;
+        }
+
+        .social-platform svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gray-400);
+        }
+
+        .social-text {
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           SECTION 15: Neon Cyberpunk Style
+           ========================================== */
+        .section-neon {
+            background: #0a0a0f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-neon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(90deg, transparent 0%, transparent 49%, rgba(0, 255, 255, 0.03) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 0%, transparent 49%, rgba(0, 255, 255, 0.03) 50%, transparent 51%);
+            background-size: 60px 60px;
+        }
+
+        .section-neon .section-title {
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-neon .section-subtitle {
+            color: var(--gray-500);
+        }
+
+        .section-neon .section-badge {
+            background: transparent;
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .neon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .neon-card {
+            background: rgba(0, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 32px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .neon-card::before,
+        .neon-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ffff;
+        }
+
+        .neon-card::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .neon-card::after {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .neon-card:hover {
+            background: rgba(0, 255, 255, 0.05);
+            box-shadow:
+                0 0 20px rgba(0, 255, 255, 0.1),
+                inset 0 0 20px rgba(0, 255, 255, 0.05);
+        }
+
+        .neon-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .neon-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .neon-info h4 {
+            color: #00ffff;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .neon-info span {
+            color: #ff00ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .neon-rating {
+            margin-left: auto;
+            color: #00ffff;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .neon-text {
+            color: var(--gray-400);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .neon-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .neon-date {
+            color: var(--gray-600);
+            font-size: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .neon-badge {
+            padding: 4px 12px;
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid #ff00ff;
+            color: #ff00ff;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           Utility: SVG Icons
+           ========================================== */
+        .icon-star {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ==========================================
+           SECTION 16: Peek Carousel (Half Visible)
+           ========================================== */
+        .section-peek {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            overflow: hidden;
+        }
+
+        .peek-wrapper {
+            position: relative;
+            padding: 0 60px;
+        }
+
+        .peek-track {
+            display: flex;
+            gap: 32px;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 20px 0;
+        }
+
+        .peek-card {
+            flex: 0 0 420px;
+            background: white;
+            border-radius: 24px;
+            padding: 36px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            opacity: 0.4;
+            transform: scale(0.9);
+        }
+
+        .peek-card.active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .peek-card.adjacent {
+            opacity: 0.6;
+            transform: scale(0.95);
+        }
+
+        .peek-quote {
+            font-size: 72px;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            line-height: 0.5;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .peek-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+
+        .peek-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .peek-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .peek-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 4px;
+        }
+
+        .peek-info span {
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+
+        .peek-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .peek-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .peek-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .peek-btn:hover svg {
+            stroke: white;
+        }
+
+        .peek-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gray-600);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .peek-counter {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .peek-counter span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           SECTION 17: Line Stars / Artistic
+           ========================================== */
+        .section-linestars {
+            background: #1a1a2e;
+            position: relative;
+        }
+
+        .section-linestars::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(255, 182, 193, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(173, 216, 230, 0.08) 0%, transparent 50%);
+        }
+
+        .section-linestars .section-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-linestars .section-title {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 42px;
+        }
+
+        .section-linestars .section-subtitle {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .section-linestars .section-badge {
+            background: transparent;
+            border: 1px solid rgba(255,182,193,0.5);
+            color: #ffb6c1;
+        }
+
+        /* Line-drawn stars */
+        .stars-line {
+            display: flex;
+            gap: 6px;
+        }
+
+        .star-line {
+            width: 20px;
+            height: 20px;
+            stroke: #ffb6c1;
+            stroke-width: 1.5;
+            fill: none;
+            transition: all 0.3s ease;
+        }
+
+        .star-line.filled {
+            fill: rgba(255, 182, 193, 0.2);
+        }
+
+        .star-line.half {
+            fill: url(#halfGradient);
+        }
+
+        .linestars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
+        }
+
+        .linestars-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .linestars-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,182,193,0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .linestars-card:hover::before {
+            opacity: 1;
+        }
+
+        .linestars-card:hover {
+            background: rgba(255,255,255,0.04);
+            transform: translateY(-4px);
+        }
+
+        .linestars-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .linestars-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .linestars-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,182,193,0.3);
+        }
+
+        .linestars-name {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .linestars-role {
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+        }
+
+        .linestars-text {
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .linestars-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .linestars-date {
+            color: rgba(255,255,255,0.3);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           SECTION 18: Polaroid Style
+           ========================================== */
+        .section-polaroid {
+            background: linear-gradient(180deg, #f5f0e8 0%, #e8e0d5 100%);
+            padding: 100px 20px;
+        }
+
+        .section-polaroid .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        .polaroid-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            perspective: 1000px;
+        }
+
+        .polaroid-card {
+            background: #fff;
+            padding: 20px 20px 60px;
+            box-shadow:
+                0 4px 6px rgba(0,0,0,0.1),
+                0 10px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .polaroid-card:nth-child(1) { transform: rotate(-4deg); }
+        .polaroid-card:nth-child(2) { transform: rotate(2deg); }
+        .polaroid-card:nth-child(3) { transform: rotate(-2deg); }
+        .polaroid-card:nth-child(4) { transform: rotate(5deg); }
+
+        .polaroid-card:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-10px);
+            z-index: 10;
+            box-shadow:
+                0 20px 40px rgba(0,0,0,0.2),
+                0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .polaroid-image {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            filter: saturate(0.9) contrast(1.05);
+        }
+
+        .polaroid-content {
+            text-align: center;
+        }
+
+        .polaroid-text {
+            font-family: 'Caveat', cursive, 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+            max-width: 260px;
+        }
+
+        .polaroid-name {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .polaroid-tape {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background: rgba(255,255,200,0.7);
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+        }
+
+        /* ==========================================
+           SECTION 19: Brutalist Design
+           ========================================== */
+        .section-brutalist {
+            background: #f0f0f0;
+            border-top: 8px solid #000;
+            border-bottom: 8px solid #000;
+        }
+
+        .section-brutalist .section-header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .section-brutalist .section-badge {
+            background: #000;
+            color: #fff;
+            border-radius: 0;
+            font-size: 11px;
+        }
+
+        .section-brutalist .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+
+        .section-brutalist .section-subtitle {
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .brutalist-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border: 4px solid #000;
+        }
+
+        @media (max-width: 768px) {
+            .brutalist-grid { grid-template-columns: 1fr; }
+        }
+
+        .brutalist-card {
+            padding: 40px;
+            border: 2px solid #000;
+            background: #fff;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .brutalist-card:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .brutalist-card:hover .brutalist-text,
+        .brutalist-card:hover .brutalist-name,
+        .brutalist-card:hover .brutalist-role {
+            color: #fff;
+        }
+
+        .brutalist-card:hover .star-brutalist {
+            stroke: #fff;
+        }
+
+        .brutalist-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            line-height: 0.8;
+            color: #000;
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .brutalist-card:hover .brutalist-number {
+            color: #fff;
+        }
+
+        .brutalist-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .star-brutalist {
+            width: 24px;
+            height: 24px;
+            stroke: #000;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .star-brutalist.filled {
+            fill: #000;
+        }
+
+        .brutalist-card:hover .star-brutalist.filled {
+            fill: #fff;
+        }
+
+        .brutalist-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            color: #000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brutalist-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brutalist-avatar {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2);
+            border: 3px solid #000;
+        }
+
+        .brutalist-card:hover .brutalist-avatar {
+            border-color: #fff;
+        }
+
+        .brutalist-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000;
+        }
+
+        .brutalist-role {
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================
+           SECTION 20: Gradient Mesh
+           ========================================== */
+        .section-mesh {
+            background:
+                radial-gradient(at 40% 20%, hsla(280, 100%, 74%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 85%, 63%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, hsla(240, 100%, 70%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(142, 100%, 69%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 0.3) 0px, transparent 50%),
+                #fff;
+        }
+
+        .section-mesh .section-title {
+            background: linear-gradient(135deg, #667eea 0%, #ec4899 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mesh-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .mesh-card {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 28px;
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+
+        .mesh-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            background: rgba(255,255,255,0.9);
+        }
+
+        .mesh-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .mesh-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 3px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #667eea, #ec4899) border-box;
+        }
+
+        .mesh-info h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .mesh-info span {
+            font-size: 14px;
+            background: linear-gradient(135deg, #667eea, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mesh-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .star-mesh {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: url(#meshGradient);
+            stroke-width: 1.5;
+        }
+
+        .star-mesh.filled {
+            fill: url(#meshGradient);
+        }
+
+        .mesh-text {
+            color: var(--gray-600);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* ==========================================
+           SECTION 21: Editorial / Big Typography
+           ========================================== */
+        .section-editorial {
+            background: #0d0d0d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-editorial .section-badge {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .section-editorial .section-title {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 400;
+        }
+
+        .section-editorial .section-subtitle {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .editorial-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .editorial-container { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        .editorial-quote {
+            position: relative;
+        }
+
+        .editorial-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 300px;
+            color: rgba(255,255,255,0.03);
+            position: absolute;
+            top: -100px;
+            left: -40px;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .editorial-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .editorial-author {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .editorial-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(30%);
+        }
+
+        .editorial-name {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .editorial-role {
+            color: rgba(255,255,255,0.4);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .editorial-stars {
+            display: flex;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .star-editorial {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255,255,255,0.3);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .star-editorial.filled {
+            fill: rgba(255,255,255,0.15);
+            stroke: rgba(255,255,255,0.5);
+        }
+
+        .editorial-visual {
+            position: relative;
+        }
+
+        .editorial-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(50%) contrast(1.1);
+        }
+
+        .editorial-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+            mix-blend-mode: overlay;
+            border-radius: 4px;
+        }
+
+        /* ==========================================
+           SECTION 22: Split Cards
+           ========================================== */
+        .section-split {
+            background: #fff;
+        }
+
+        .split-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .split-grid { grid-template-columns: 1fr; }
+        }
+
+        .split-card {
+            display: flex;
+            background: var(--gray-100);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            min-height: 280px;
+        }
+
+        .split-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .split-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .split-image {
+            flex: 0 0 45%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .split-card:hover .split-image img {
+            transform: scale(1.1);
+        }
+
+        .split-content {
+            flex: 1;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .star-split {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .star-split.filled {
+            fill: var(--accent);
+            stroke: var(--accent);
+        }
+
+        .split-text {
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .split-author h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 4px;
+        }
+
+        .split-author span {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* ==========================================
+           SECTION 23: 3D Floating Cards
+           ========================================== */
+        .section-float {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            perspective: 1500px;
+            overflow: visible;
+        }
+
+        .section-float .section-title {
+            color: #fff;
+        }
+
+        .section-float .section-subtitle {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .float-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 48px;
+            padding: 40px 0;
+        }
+
+        .float-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 32px;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .float-card::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            right: 5%;
+            bottom: -20px;
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            filter: blur(30px);
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .float-card:hover {
+            transform: rotateY(-5deg) rotateX(5deg) translateZ(20px);
+        }
+
+        .float-card:hover::before {
+            filter: blur(40px);
+            opacity: 0.8;
+        }
+
+        .float-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .float-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.2);
+            transform: translateZ(30px);
+        }
+
+        .float-info h4 {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            transform: translateZ(20px);
+        }
+
+        .float-info span {
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            transform: translateZ(15px);
+        }
+
+        .float-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+            transform: translateZ(25px);
+        }
+
+        .star-float {
+            width: 18px;
+            height: 18px;
+            stroke: rgba(245, 158, 11, 0.6);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-float.filled {
+            fill: rgba(245, 158, 11, 0.3);
+            stroke: var(--accent);
+        }
+
+        .float-text {
+            color: rgba(255,255,255,0.75);
+            font-size: 15px;
+            line-height: 1.8;
+            transform: translateZ(10px);
+        }
+
+        /* ==========================================
+           SECTION 24: Handwritten / Sketch Style
+           ========================================== */
+        .section-sketch {
+            background: #fffef5;
+            background-image:
+                linear-gradient(90deg, transparent 79px, #e8dcc8 79px, #e8dcc8 81px, transparent 81px),
+                linear-gradient(#e8dcc8 1px, transparent 1px);
+            background-size: 100% 28px;
+        }
+
+        .section-sketch .section-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .sketch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .sketch-card {
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 0;
+            padding: 32px;
+            position: relative;
+            transform: rotate(-1deg);
+            box-shadow: 5px 5px 0 #333;
+            transition: all 0.3s ease;
+        }
+
+        .sketch-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .sketch-card:hover {
+            transform: rotate(0deg) translateY(-4px);
+        }
+
+        .sketch-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+        }
+
+        .sketch-corner.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+        .sketch-corner.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+        .sketch-corner.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+        .sketch-corner.br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+        .sketch-stars {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .star-sketch {
+            width: 24px;
+            height: 24px;
+            stroke: #333;
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 0;
+        }
+
+        .star-sketch.filled {
+            fill: #ffd700;
+            stroke: #b8860b;
+        }
+
+        .sketch-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .sketch-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 20px;
+            border-top: 2px dashed #333;
+        }
+
+        .sketch-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #333;
+            object-fit: cover;
+        }
+
+        .sketch-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .sketch-role {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* ==========================================
+           SECTION 25: Stacked Cards Carousel
+           ========================================== */
+        .section-stacked {
+            background: linear-gradient(135deg, #434343 0%, #000000 100%);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-stacked .section-title {
+            color: #fff;
+        }
+
+        .section-stacked .section-subtitle {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .stacked-container {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stacked-card {
+            position: absolute;
+            width: 400px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .stacked-card:nth-child(1) {
+            transform: translateX(-60%) scale(0.85);
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .stacked-card:nth-child(2) {
+            transform: translateX(-30%) scale(0.92);
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .stacked-card:nth-child(3) {
+            transform: translateX(0) scale(1);
+            z-index: 3;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .stacked-card:nth-child(4) {
+            transform: translateX(30%) scale(0.92);
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .stacked-card:nth-child(5) {
+            transform: translateX(60%) scale(0.85);
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .stacked-quote {
+            font-size: 60px;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+            line-height: 0.5;
+            margin-bottom: 16px;
+        }
+
+        .stacked-text {
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .stacked-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .stacked-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .stacked-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .stacked-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--gray-800);
+        }
+
+        .stacked-role {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        @media (max-width: 900px) {
+            .stacked-card { width: 300px; padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1: Classic Grid -->
+    <section class="section section-classic">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Classic Grid</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Simple, elegant cards that let the reviews speak for themselves</p>
+            </div>
+            <div class="classic-grid" id="classic-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Masonry Layout -->
+    <section class="section section-masonry">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Masonry Layout</span>
+                <h2 class="section-title">Stories From Real People</h2>
+                <p class="section-subtitle">A dynamic layout that adapts to content length</p>
+            </div>
+            <div class="masonry-grid" id="masonry-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Single Testimonial Slider -->
+    <section class="section section-slider">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Testimonial Slider</span>
+                <h2 class="section-title">Happy & Satisfied Faces</h2>
+                <p class="section-subtitle">Here's what some of our satisfied clients have to say about our work</p>
+            </div>
+            <div class="slider-container">
+                <div class="slider-wrapper" id="slider-wrapper"></div>
+                <div class="slider-nav">
+                    <button class="slider-btn" id="slider-prev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="slider-btn" id="slider-next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="slider-dots" id="slider-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Dark Futuristic -->
+    <section class="section section-futuristic">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Futuristic Dark</span>
+                <h2 class="section-title">Next-Gen Feedback</h2>
+                <p class="section-subtitle">Modern aesthetics for forward-thinking brands</p>
+            </div>
+            <div class="futuristic-grid" id="futuristic-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Glassmorphism -->
+    <section class="section section-glass">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Glassmorphism</span>
+                <h2 class="section-title">Crystal Clear Reviews</h2>
+                <p class="section-subtitle">Elegant frosted glass effects for a premium feel</p>
+            </div>
+            <div class="glass-grid" id="glass-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Minimal Clean -->
+    <section class="section section-minimal">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Minimal</span>
+                <h2 class="section-title">Simple & Clean</h2>
+                <p class="section-subtitle">Less is more - focused on readability</p>
+            </div>
+            <div class="minimal-grid" id="minimal-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Magazine Style -->
+    <section class="section section-magazine">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Magazine Style</span>
+                <h2 class="section-title">Featured Reviews</h2>
+                <p class="section-subtitle">Editorial layout for maximum impact</p>
+            </div>
+            <div class="magazine-layout" id="magazine-layout"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: Bubble Chat -->
+    <section class="section section-bubble">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Chat Style</span>
+                <h2 class="section-title">Real Conversations</h2>
+                <p class="section-subtitle">Reviews presented as natural conversations</p>
+            </div>
+            <div class="bubble-container" id="bubble-container"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: Horizontal Carousel -->
+    <section class="section section-carousel">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Auto Carousel</span>
+                <h2 class="section-title">Endless Testimonials</h2>
+                <p class="section-subtitle">Infinite scroll of happy customers</p>
+            </div>
+        </div>
+        <div class="carousel-track" id="carousel-track"></div>
+    </section>
+
+    <!-- SECTION 10: Timeline -->
+    <section class="section section-timeline">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Timeline</span>
+                <h2 class="section-title">Our Journey Together</h2>
+                <p class="section-subtitle">Reviews through time tell our story</p>
+            </div>
+            <div class="timeline-container" id="timeline-container">
+                <div class="timeline-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: Grouped Reviews -->
+    <section class="section section-grouped">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Grouped</span>
+                <h2 class="section-title">Reviews by Category</h2>
+                <p class="section-subtitle">Organized feedback for easy browsing</p>
+            </div>
+            <div class="grouped-container" id="grouped-container"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: Video Testimonials -->
+    <section class="section section-video">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Video Reviews</span>
+                <h2 class="section-title">See & Hear Real Stories</h2>
+                <p class="section-subtitle">Video testimonials add authenticity and trust</p>
+            </div>
+            <div class="video-grid" id="video-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: Stats + Reviews -->
+    <section class="section section-stats">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Stats Overview</span>
+                <h2 class="section-title">Numbers Don't Lie</h2>
+                <p class="section-subtitle">Combined statistics and reviews for maximum impact</p>
+            </div>
+            <div class="stats-layout" id="stats-layout"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 14: Social Proof Wall -->
+    <section class="section section-social">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Social Wall</span>
+                <h2 class="section-title">What People Are Saying</h2>
+                <p class="section-subtitle">Real-time social proof from across the web</p>
+            </div>
+        </div>
+        <div class="social-wall" id="social-wall"></div>
+    </section>
+
+    <!-- SECTION 15: Neon Cyberpunk -->
+    <section class="section section-neon">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Cyberpunk</span>
+                <h2 class="section-title">SYSTEM_FEEDBACK.exe</h2>
+                <p class="section-subtitle">For brands that dare to be different</p>
+            </div>
+            <div class="neon-grid" id="neon-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 16: Peek Carousel -->
+    <section class="section section-peek">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Peek Carousel</span>
+                <h2 class="section-title">Discover More Stories</h2>
+                <p class="section-subtitle">Swipe through testimonials with a preview of what's next</p>
+            </div>
+            <div class="peek-wrapper">
+                <div class="peek-track" id="peek-track"></div>
+            </div>
+            <div class="peek-nav">
+                <button class="peek-btn" id="peek-prev">
+                    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="peek-btn" id="peek-next">
+                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <div class="peek-counter"><span id="peek-current">1</span> / <span id="peek-total">5</span></div>
+        </div>
+    </section>
+
+    <!-- SECTION 17: Line Stars / Artistic -->
+    <section class="section section-linestars">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Artistic Stars</span>
+                <h2 class="section-title">Delicate Impressions</h2>
+                <p class="section-subtitle">Elegant line-drawn aesthetics with soft color accents</p>
+            </div>
+            <div class="linestars-grid" id="linestars-grid"></div>
+        </div>
+        <!-- SVG Definitions for gradients -->
+        <svg width="0" height="0" style="position:absolute">
+            <defs>
+                <linearGradient id="halfGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="50%" style="stop-color:rgba(255,182,193,0.3)"/>
+                    <stop offset="50%" style="stop-color:transparent"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </section>
+
+    <!-- SECTION 18: Polaroid Style -->
+    <section class="section section-polaroid">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Polaroid</span>
+                <h2 class="section-title">Captured Moments</h2>
+                <p class="section-subtitle">Nostalgic instant-photo style reviews</p>
+            </div>
+            <div class="polaroid-grid" id="polaroid-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 19: Brutalist -->
+    <section class="section section-brutalist">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">BRUTALIST</span>
+                <h2 class="section-title">RAW FEEDBACK</h2>
+                <p class="section-subtitle">// NO FRILLS. JUST TRUTH.</p>
+            </div>
+            <div class="brutalist-grid" id="brutalist-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 20: Gradient Mesh -->
+    <section class="section section-mesh">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Gradient Mesh</span>
+                <h2 class="section-title">Vibrant Voices</h2>
+                <p class="section-subtitle">Modern gradients meet beautiful feedback</p>
+            </div>
+            <div class="mesh-grid" id="mesh-grid"></div>
+        </div>
+        <svg width="0" height="0" style="position:absolute">
+            <defs>
+                <linearGradient id="meshGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#667eea"/>
+                    <stop offset="100%" style="stop-color:#ec4899"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </section>
+
+    <!-- SECTION 21: Editorial -->
+    <section class="section section-editorial">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Editorial</span>
+                <h2 class="section-title">The Art of Appreciation</h2>
+                <p class="section-subtitle">Typography-driven design for maximum impact</p>
+            </div>
+            <div class="editorial-container" id="editorial-container"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 22: Split Cards -->
+    <section class="section section-split">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Split Layout</span>
+                <h2 class="section-title">Two Sides of Excellence</h2>
+                <p class="section-subtitle">Image meets content in perfect harmony</p>
+            </div>
+            <div class="split-grid" id="split-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 23: 3D Floating -->
+    <section class="section section-float">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">3D Floating</span>
+                <h2 class="section-title">Elevated Perspectives</h2>
+                <p class="section-subtitle">Reviews that pop with depth and dimension</p>
+            </div>
+            <div class="float-grid" id="float-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 24: Sketch Style -->
+    <section class="section section-sketch">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Handwritten</span>
+                <h2 class="section-title">Sketched with Care</h2>
+                <p class="section-subtitle">Hand-crafted aesthetics for a personal touch</p>
+            </div>
+            <div class="sketch-grid" id="sketch-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 25: Stacked Cards -->
+    <section class="section section-stacked">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Stacked Deck</span>
+                <h2 class="section-title">Layers of Love</h2>
+                <p class="section-subtitle">Fan through stacked testimonials</p>
+            </div>
+            <div class="stacked-container" id="stacked-container"></div>
+        </div>
+    </section>
+
+    <script>
+        // Sample review data
+        const reviews = [
+            {
+                name: "Carolina Monntoya",
+                role: "Managing Director",
+                company: "TechCorp",
+                avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
+                rating: 5,
+                text: "Working with this team was a game-changer for our project. Their keen eye for detail and creative approach to product design elevated our concept beyond our expectations. We look forward to collaborating on future projects.",
+                date: "2 weeks ago",
+                verified: true
+            },
+            {
+                name: "Peter Rose",
+                role: "Manager",
+                company: "Innovate Labs",
+                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
+                rating: 5,
+                text: "Exceptional service from start to finish. The team understood our vision immediately and delivered results that exceeded all expectations. Highly recommended!",
+                date: "1 month ago",
+                verified: true
+            },
+            {
+                name: "Gerald Gilbert",
+                role: "Developer",
+                company: "CodeBase",
+                avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
+                rating: 4,
+                text: "Great experience overall. The attention to detail was impressive, and the final product speaks for itself. Would definitely work with them again.",
+                date: "3 weeks ago",
+                verified: true
+            },
+            {
+                name: "Sarah Chen",
+                role: "CEO",
+                company: "StartupXYZ",
+                avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
+                rating: 5,
+                text: "This partnership has been transformative for our business. The insights and expertise brought to the table helped us achieve our goals faster than we ever thought possible. An absolute pleasure to work with!",
+                date: "1 week ago",
+                verified: true
+            },
+            {
+                name: "Michael Torres",
+                role: "Product Lead",
+                company: "DesignHub",
+                avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150",
+                rating: 5,
+                text: "Incredible attention to detail and a deep understanding of user experience. They don't just deliver what you ask for - they deliver what you actually need.",
+                date: "2 months ago",
+                verified: true
+            },
+            {
+                name: "Emily Watson",
+                role: "Creative Director",
+                company: "Artistry Co",
+                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150",
+                rating: 5,
+                text: "From concept to execution, everything was handled professionally and creatively. The results speak for themselves.",
+                date: "5 days ago",
+                verified: true
+            },
+            {
+                name: "James Wilson",
+                role: "CTO",
+                company: "DataFlow",
+                avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150",
+                rating: 4,
+                text: "Solid work and great communication throughout the project. Minor revisions were handled quickly and professionally.",
+                date: "3 months ago",
+                verified: false
+            },
+            {
+                name: "Lisa Park",
+                role: "Marketing Head",
+                company: "GrowthCo",
+                avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150",
+                rating: 5,
+                text: "Our conversion rates have skyrocketed since implementing their recommendations. Data-driven and creative - the perfect combination!",
+                date: "1 week ago",
+                verified: true
+            },
+            {
+                name: "David Kim",
+                role: "Founder",
+                company: "NextGen AI",
+                avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150",
+                rating: 5,
+                text: "They understood the complexities of our AI product and communicated its value beautifully. Our user engagement has never been higher.",
+                date: "2 weeks ago",
+                verified: true
+            },
+            {
+                name: "Amanda Foster",
+                role: "Operations Manager",
+                company: "SwiftLogistics",
+                avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150",
+                rating: 4,
+                text: "Streamlined our entire process and delivered ahead of schedule. The team's efficiency is remarkable.",
+                date: "1 month ago",
+                verified: true
+            }
+        ];
+
+        // Helper function to create star rating
+        function createStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<svg class="star ${i > rating ? 'empty' : ''}" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>`;
+            }
+            return stars;
+        }
+
+        // Section 1: Classic Grid
+        function renderClassicGrid() {
+            const container = document.getElementById('classic-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="classic-card">
+                    <div class="classic-card-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="avatar">
+                        <div class="classic-card-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role}</span>
+                        </div>
+                    </div>
+                    <p class="classic-card-text">"${review.text}"</p>
+                    <div class="classic-card-footer">
+                        <div class="stars">${createStars(review.rating)}</div>
+                        <span class="classic-card-date">${review.date}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 2: Masonry Grid
+        function renderMasonryGrid() {
+            const container = document.getElementById('masonry-grid');
+            const masonryReviews = [...reviews];
+            container.innerHTML = masonryReviews.map((review, index) => `
+                <div class="masonry-card ${index % 4 === 0 ? 'featured' : ''}">
+                    <div class="masonry-quote">"</div>
+                    <p class="masonry-text">${review.text}</p>
+                    <div class="masonry-footer">
+                        <img src="${review.avatar}" alt="${review.name}" class="avatar">
+                        <div>
+                            <div class="masonry-name">${review.name}</div>
+                            <div class="masonry-role">${review.role} at ${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 3: Slider
+        let currentSlide = 0;
+        function renderSlider() {
+            const wrapper = document.getElementById('slider-wrapper');
+            const dots = document.getElementById('slider-dots');
+            const sliderReviews = reviews.slice(0, 4);
+
+            wrapper.innerHTML = sliderReviews.map(review => `
+                <div class="slider-slide">
+                    <div class="slider-image">
+                        <img src="${review.avatar.replace('w=150', 'w=400')}" alt="${review.name}">
+                    </div>
+                    <div class="slider-content">
+                        <div class="slider-quote-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="slider-text">${review.text}</p>
+                        <div class="stars" style="margin-bottom: 24px">${createStars(review.rating)}</div>
+                        <div class="slider-author">
+                            <img src="${review.avatar}" alt="${review.name}" class="avatar avatar-lg">
+                            <div class="slider-author-info">
+                                <h4>${review.name}</h4>
+                                <span>${review.role} at ${review.company}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            dots.innerHTML = sliderReviews.map((_, i) => `
+                <div class="slider-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>
+            `).join('');
+
+            // Slider controls
+            document.getElementById('slider-prev').addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + sliderReviews.length) % sliderReviews.length;
+                updateSlider();
+            });
+
+            document.getElementById('slider-next').addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % sliderReviews.length;
+                updateSlider();
+            });
+
+            dots.addEventListener('click', (e) => {
+                if (e.target.classList.contains('slider-dot')) {
+                    currentSlide = parseInt(e.target.dataset.index);
+                    updateSlider();
+                }
+            });
+        }
+
+        function updateSlider() {
+            const wrapper = document.getElementById('slider-wrapper');
+            const dots = document.querySelectorAll('.slider-dot');
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        // Section 4: Futuristic Grid
+        function renderFuturisticGrid() {
+            const container = document.getElementById('futuristic-grid');
+            const tags = ['Quality', 'Service', 'Design', 'Support', 'Value'];
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="futuristic-card">
+                    <div class="futuristic-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="futuristic-avatar">
+                        <div class="futuristic-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.company}</span>
+                        </div>
+                        <div class="futuristic-rating">
+                            <svg class="star" viewBox="0 0 24 24" style="width:16px;height:16px">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <span>${review.rating}.0</span>
+                        </div>
+                    </div>
+                    <p class="futuristic-text">${review.text}</p>
+                    <div class="futuristic-tags">
+                        ${tags.slice(0, Math.floor(Math.random() * 3) + 2).map(tag => `
+                            <span class="futuristic-tag">${tag}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 5: Glass Grid
+        function renderGlassGrid() {
+            const container = document.getElementById('glass-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="glass-card">
+                    <div class="glass-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="glass-avatar">
+                        <div class="glass-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role} at ${review.company}</span>
+                        </div>
+                    </div>
+                    <div class="glass-rating">${createStars(review.rating)}</div>
+                    <p class="glass-text">"${review.text}"</p>
+                    <div class="glass-footer">
+                        <span class="glass-date">${review.date}</span>
+                        <div class="glass-helpful">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                            </svg>
+                            Helpful (24)
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 6: Minimal Grid
+        function renderMinimalGrid() {
+            const container = document.getElementById('minimal-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="minimal-card">
+                    <div class="minimal-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="minimal-avatar">
+                        <div class="minimal-info">
+                            <h4>${review.name}</h4>
+                            ${review.verified ? `
+                                <div class="minimal-verified">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                    Verified Purchase
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <p class="minimal-text">${review.text}</p>
+                    <div class="minimal-footer">
+                        <div class="stars">${createStars(review.rating)}</div>
+                        <span class="minimal-date">${review.date}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 7: Magazine Layout
+        function renderMagazineLayout() {
+            const container = document.getElementById('magazine-layout');
+            const featured = reviews[0];
+            const sidebar = reviews.slice(1, 4);
+
+            container.innerHTML = `
+                <div class="magazine-featured">
+                    <img src="${featured.avatar.replace('w=150', 'w=600')}" alt="${featured.name}" class="magazine-featured-image">
+                    <div class="magazine-featured-overlay">
+                        <p class="magazine-featured-text">"${featured.text}"</p>
+                        <div class="magazine-featured-author">
+                            <img src="${featured.avatar}" alt="${featured.name}">
+                            <div>
+                                <h4>${featured.name}</h4>
+                                <span>${featured.role}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="magazine-sidebar">
+                    ${sidebar.map((review, i) => `
+                        <div class="magazine-card">
+                            <div class="magazine-card-number">0${i + 2}</div>
+                            <div class="magazine-card-content">
+                                <p class="magazine-card-text">"${review.text.substring(0, 150)}..."</p>
+                                <div class="magazine-card-author">
+                                    <img src="${review.avatar}" alt="${review.name}">
+                                    <div>
+                                        <h4>${review.name}</h4>
+                                        <span>${review.role}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Section 8: Bubble Chat
+        function renderBubbleChat() {
+            const container = document.getElementById('bubble-container');
+            container.innerHTML = reviews.slice(0, 5).map((review, i) => `
+                <div class="bubble-item ${i % 2 === 1 ? 'right' : ''}">
+                    <img src="${review.avatar}" alt="${review.name}" class="bubble-avatar">
+                    <div class="bubble-content">
+                        <div class="bubble-message">
+                            <p>${review.text}</p>
+                            <div class="stars">${createStars(review.rating)}</div>
+                        </div>
+                        <div class="bubble-meta">
+                            <span class="bubble-name">${review.name}</span>
+                            <span class="bubble-time">${review.date}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 9: Carousel
+        function renderCarousel() {
+            const container = document.getElementById('carousel-track');
+            const doubledReviews = [...reviews, ...reviews];
+            container.innerHTML = doubledReviews.map(review => `
+                <div class="carousel-card">
+                    <div class="carousel-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="carousel-avatar">
+                        <div class="carousel-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.company}</span>
+                        </div>
+                    </div>
+                    <p class="carousel-text">"${review.text.substring(0, 120)}..."</p>
+                    <div class="carousel-rating">${createStars(review.rating)}</div>
+                </div>
+            `).join('');
+        }
+
+        // Section 10: Timeline
+        function renderTimeline() {
+            const container = document.getElementById('timeline-container');
+            const dates = ['Jan 2024', 'Feb 2024', 'Mar 2024', 'Apr 2024'];
+            const items = reviews.slice(0, 4).map((review, i) => `
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">${dates[i]}</span>
+                        <div class="timeline-header">
+                            <img src="${review.avatar}" alt="${review.name}" class="timeline-avatar">
+                            <div class="timeline-info">
+                                <h4>${review.name}</h4>
+                                <span>${review.company}</span>
+                            </div>
+                        </div>
+                        <p class="timeline-text">"${review.text.substring(0, 150)}..."</p>
+                    </div>
+                </div>
+            `).join('');
+            container.innerHTML = `<div class="timeline-line"></div>${items}`;
+        }
+
+        // Section 11: Grouped
+        function renderGrouped() {
+            const container = document.getElementById('grouped-container');
+            const positive = reviews.filter(r => r.rating >= 4);
+            const constructive = reviews.filter(r => r.rating < 4);
+
+            container.innerHTML = `
+                <div class="grouped-stack">
+                    <div class="grouped-label">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Positive Reviews
+                    </div>
+                    <div class="grouped-cards">
+                        ${positive.slice(0, 3).map(review => `
+                            <div class="grouped-card">
+                                <div class="grouped-card-header">
+                                    <img src="${review.avatar}" alt="${review.name}" class="grouped-card-avatar">
+                                    <div class="grouped-card-info">
+                                        <h4>${review.name}</h4>
+                                        <span>${createStars(review.rating)}</span>
+                                    </div>
+                                </div>
+                                <p class="grouped-card-text">"${review.text.substring(0, 100)}..."</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="grouped-stack">
+                    <div class="grouped-label warning">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        Constructive Feedback
+                    </div>
+                    <div class="grouped-cards">
+                        ${(constructive.length > 0 ? constructive : positive.slice(3, 6)).slice(0, 3).map(review => `
+                            <div class="grouped-card">
+                                <div class="grouped-card-header">
+                                    <img src="${review.avatar}" alt="${review.name}" class="grouped-card-avatar">
+                                    <div class="grouped-card-info">
+                                        <h4>${review.name}</h4>
+                                        <span>${createStars(review.rating)}</span>
+                                    </div>
+                                </div>
+                                <p class="grouped-card-text">"${review.text.substring(0, 100)}..."</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Section 12: Video Grid
+        function renderVideoGrid() {
+            const container = document.getElementById('video-grid');
+            const durations = ['2:34', '1:45', '3:12'];
+            container.innerHTML = reviews.slice(0, 3).map((review, i) => `
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="${review.avatar.replace('w=150', 'w=600')}" alt="${review.name}">
+                        <div class="video-play">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="video-duration">${durations[i]}</span>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-text">"${review.text.substring(0, 100)}..."</p>
+                        <div class="video-author">
+                            <img src="${review.avatar}" alt="${review.name}">
+                            <div>
+                                <h4>${review.name}</h4>
+                                <span>${review.role}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 13: Stats Layout
+        function renderStatsLayout() {
+            const container = document.getElementById('stats-layout');
+            container.innerHTML = `
+                <div class="stats-summary">
+                    <div class="stats-number">4.8</div>
+                    <div class="stats-label">out of 5 stars</div>
+                    <div class="stats-stars">${createStars(5)}</div>
+                    <div class="stats-breakdown">
+                        <div class="stats-bar">
+                            <span class="stats-bar-label">5 star</span>
+                            <div class="stats-bar-track"><div class="stats-bar-fill" style="width: 75%"></div></div>
+                            <span class="stats-bar-count">2.0k</span>
+                        </div>
+                        <div class="stats-bar">
+                            <span class="stats-bar-label">4 star</span>
+                            <div class="stats-bar-track"><div class="stats-bar-fill" style="width: 50%"></div></div>
+                            <span class="stats-bar-count">1.0k</span>
+                        </div>
+                        <div class="stats-bar">
+                            <span class="stats-bar-label">3 star</span>
+                            <div class="stats-bar-track"><div class="stats-bar-fill" style="width: 20%"></div></div>
+                            <span class="stats-bar-count">500</span>
+                        </div>
+                        <div class="stats-bar">
+                            <span class="stats-bar-label">2 star</span>
+                            <div class="stats-bar-track"><div class="stats-bar-fill" style="width: 8%"></div></div>
+                            <span class="stats-bar-count">200</span>
+                        </div>
+                        <div class="stats-bar">
+                            <span class="stats-bar-label">1 star</span>
+                            <div class="stats-bar-track"><div class="stats-bar-fill" style="width: 0%"></div></div>
+                            <span class="stats-bar-count">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-reviews">
+                    ${reviews.slice(0, 3).map(review => `
+                        <div class="stats-review-card">
+                            <img src="${review.avatar}" alt="${review.name}" class="stats-review-avatar">
+                            <div class="stats-review-content">
+                                <div class="stats-review-header">
+                                    <div>
+                                        <div class="stats-review-name">${review.name}</div>
+                                        <div class="stars" style="margin-top: 4px">${createStars(review.rating)}</div>
+                                    </div>
+                                    <span class="stats-review-date">${review.date}</span>
+                                </div>
+                                <p class="stats-review-text">${review.text}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Section 14: Social Wall
+        function renderSocialWall() {
+            const container = document.getElementById('social-wall');
+            const platforms = ['twitter', 'facebook', 'linkedin'];
+            const platformIcons = {
+                twitter: '<svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>',
+                facebook: '<svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+                linkedin: '<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>'
+            };
+
+            const rows = [];
+            for (let r = 0; r < 2; r++) {
+                const doubledReviews = [...reviews, ...reviews];
+                rows.push(`
+                    <div class="social-row">
+                        ${doubledReviews.map((review, i) => {
+                            const platform = platforms[i % 3];
+                            return `
+                                <div class="social-card">
+                                    <div class="social-header">
+                                        <img src="${review.avatar}" alt="${review.name}" class="social-avatar">
+                                        <div class="social-info">
+                                            <h4>${review.name}</h4>
+                                            <span>@${review.name.toLowerCase().replace(' ', '_')}</span>
+                                        </div>
+                                        <div class="social-platform">${platformIcons[platform]}</div>
+                                    </div>
+                                    <p class="social-text">${review.text.substring(0, 100)}...</p>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `);
+            }
+            container.innerHTML = rows.join('');
+        }
+
+        // Section 15: Neon Grid
+        function renderNeonGrid() {
+            const container = document.getElementById('neon-grid');
+            const badges = ['VERIFIED', 'TOP_USER', 'EARLY_ADOPTER'];
+            container.innerHTML = reviews.slice(0, 4).map((review, i) => `
+                <div class="neon-card">
+                    <div class="neon-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="neon-avatar">
+                        <div class="neon-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.company}</span>
+                        </div>
+                        <div class="neon-rating">${review.rating}.0</div>
+                    </div>
+                    <p class="neon-text">${review.text}</p>
+                    <div class="neon-footer">
+                        <span class="neon-date">// ${review.date.toUpperCase()}</span>
+                        <span class="neon-badge">${badges[i % 3]}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Helper: Create line-drawn stars
+        function createLineStars(rating, className = 'star-line') {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                const filled = i <= rating ? 'filled' : '';
+                stars += `<svg class="${className} ${filled}" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>`;
+            }
+            return stars;
+        }
+
+        // Section 16: Peek Carousel
+        let peekIndex = 0;
+        function renderPeekCarousel() {
+            const container = document.getElementById('peek-track');
+            const peekReviews = reviews.slice(0, 7);
+            document.getElementById('peek-total').textContent = peekReviews.length;
+
+            container.innerHTML = peekReviews.map((review, i) => `
+                <div class="peek-card ${i === peekIndex ? 'active' : ''} ${Math.abs(i - peekIndex) === 1 ? 'adjacent' : ''}">
+                    <div class="peek-quote">"</div>
+                    <p class="peek-text">${review.text}</p>
+                    <div class="peek-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="peek-avatar">
+                        <div class="peek-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role} at ${review.company}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            updatePeekCarousel();
+
+            document.getElementById('peek-prev').addEventListener('click', () => {
+                peekIndex = Math.max(0, peekIndex - 1);
+                updatePeekCarousel();
+            });
+
+            document.getElementById('peek-next').addEventListener('click', () => {
+                peekIndex = Math.min(peekReviews.length - 1, peekIndex + 1);
+                updatePeekCarousel();
+            });
+        }
+
+        function updatePeekCarousel() {
+            const cards = document.querySelectorAll('.peek-card');
+            const track = document.getElementById('peek-track');
+            const cardWidth = 452; // card width + gap
+            track.style.transform = `translateX(calc(50% - ${cardWidth / 2}px - ${peekIndex * cardWidth}px))`;
+
+            cards.forEach((card, i) => {
+                card.classList.remove('active', 'adjacent');
+                if (i === peekIndex) card.classList.add('active');
+                if (Math.abs(i - peekIndex) === 1) card.classList.add('adjacent');
+            });
+
+            document.getElementById('peek-current').textContent = peekIndex + 1;
+        }
+
+        // Section 17: Line Stars Grid
+        function renderLineStarsGrid() {
+            const container = document.getElementById('linestars-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="linestars-card">
+                    <div class="linestars-header">
+                        <div class="linestars-author">
+                            <img src="${review.avatar}" alt="${review.name}" class="linestars-avatar">
+                            <div>
+                                <div class="linestars-name">${review.name}</div>
+                                <div class="linestars-role">${review.role}</div>
+                            </div>
+                        </div>
+                        <div class="stars-line">${createLineStars(review.rating)}</div>
+                    </div>
+                    <p class="linestars-text">"${review.text}"</p>
+                    <div class="linestars-footer">
+                        <span class="linestars-date">${review.date}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 18: Polaroid Grid
+        function renderPolaroidGrid() {
+            const container = document.getElementById('polaroid-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="polaroid-card">
+                    <div class="polaroid-tape"></div>
+                    <img src="${review.avatar.replace('w=150', 'w=400')}" alt="${review.name}" class="polaroid-image">
+                    <div class="polaroid-content">
+                        <p class="polaroid-text">"${review.text.substring(0, 80)}..."</p>
+                        <p class="polaroid-name">- ${review.name}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 19: Brutalist Grid
+        function renderBrutalistGrid() {
+            const container = document.getElementById('brutalist-grid');
+            container.innerHTML = reviews.slice(0, 4).map((review, i) => `
+                <div class="brutalist-card">
+                    <div class="brutalist-number">0${i + 1}</div>
+                    <div class="brutalist-stars">${createLineStars(review.rating, 'star-brutalist')}</div>
+                    <p class="brutalist-text">"${review.text}"</p>
+                    <div class="brutalist-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="brutalist-avatar">
+                        <div>
+                            <div class="brutalist-name">${review.name}</div>
+                            <div class="brutalist-role">${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 20: Mesh Grid
+        function renderMeshGrid() {
+            const container = document.getElementById('mesh-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="mesh-card">
+                    <div class="mesh-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="mesh-avatar">
+                        <div class="mesh-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role}</span>
+                        </div>
+                    </div>
+                    <div class="mesh-stars">${createLineStars(review.rating, 'star-mesh')}</div>
+                    <p class="mesh-text">"${review.text}"</p>
+                </div>
+            `).join('');
+        }
+
+        // Section 21: Editorial
+        function renderEditorial() {
+            const container = document.getElementById('editorial-container');
+            const featured = reviews[0];
+            container.innerHTML = `
+                <div class="editorial-quote">
+                    <div class="editorial-mark">"</div>
+                    <p class="editorial-text">${featured.text}</p>
+                    <div class="editorial-author">
+                        <img src="${featured.avatar.replace('w=150', 'w=200')}" alt="${featured.name}" class="editorial-avatar">
+                        <div>
+                            <div class="editorial-name">${featured.name}</div>
+                            <div class="editorial-role">${featured.role}</div>
+                            <div class="editorial-stars">${createLineStars(featured.rating, 'star-editorial')}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-visual">
+                    <img src="${featured.avatar.replace('w=150', 'w=800')}" alt="${featured.name}" class="editorial-image">
+                    <div class="editorial-overlay"></div>
+                </div>
+            `;
+        }
+
+        // Section 22: Split Grid
+        function renderSplitGrid() {
+            const container = document.getElementById('split-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="split-card">
+                    <div class="split-image">
+                        <img src="${review.avatar.replace('w=150', 'w=500')}" alt="${review.name}">
+                    </div>
+                    <div class="split-content">
+                        <div class="split-stars">${createLineStars(review.rating, 'star-split')}</div>
+                        <p class="split-text">"${review.text.substring(0, 150)}..."</p>
+                        <div class="split-author">
+                            <h4>${review.name}</h4>
+                            <span>${review.role} at ${review.company}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 23: Float Grid
+        function renderFloatGrid() {
+            const container = document.getElementById('float-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="float-card">
+                    <div class="float-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="float-avatar">
+                        <div class="float-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role}</span>
+                        </div>
+                    </div>
+                    <div class="float-stars">${createLineStars(review.rating, 'star-float')}</div>
+                    <p class="float-text">"${review.text}"</p>
+                </div>
+            `).join('');
+        }
+
+        // Section 24: Sketch Grid
+        function renderSketchGrid() {
+            const container = document.getElementById('sketch-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="sketch-card">
+                    <div class="sketch-corner tl"></div>
+                    <div class="sketch-corner tr"></div>
+                    <div class="sketch-corner bl"></div>
+                    <div class="sketch-corner br"></div>
+                    <div class="sketch-stars">${createLineStars(review.rating, 'star-sketch')}</div>
+                    <p class="sketch-text">"${review.text}"</p>
+                    <div class="sketch-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="sketch-avatar">
+                        <div>
+                            <div class="sketch-name">${review.name}</div>
+                            <div class="sketch-role">${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 25: Stacked Cards
+        function renderStackedCards() {
+            const container = document.getElementById('stacked-container');
+            const stackedReviews = reviews.slice(0, 5);
+            container.innerHTML = stackedReviews.map(review => `
+                <div class="stacked-card">
+                    <div class="stacked-quote">"</div>
+                    <div class="stacked-stars">${createStars(review.rating)}</div>
+                    <p class="stacked-text">${review.text.substring(0, 150)}...</p>
+                    <div class="stacked-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="stacked-avatar">
+                        <div>
+                            <div class="stacked-name">${review.name}</div>
+                            <div class="stacked-role">${review.role}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add click interaction
+            const cards = container.querySelectorAll('.stacked-card');
+            cards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    // Rotate cards
+                    cards.forEach((c, i) => {
+                        const offset = i - index;
+                        const scale = Math.abs(offset) === 0 ? 1 : Math.abs(offset) === 1 ? 0.92 : 0.85;
+                        const opacity = Math.abs(offset) === 0 ? 1 : Math.abs(offset) === 1 ? 0.7 : 0.5;
+                        const translateX = offset * 30;
+                        c.style.transform = `translateX(${translateX}%) scale(${scale})`;
+                        c.style.opacity = opacity;
+                        c.style.zIndex = 5 - Math.abs(offset);
+                        if (offset === 0) {
+                            c.style.boxShadow = '0 30px 60px rgba(0,0,0,0.4)';
+                        } else {
+                            c.style.boxShadow = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Initialize all sections
+        document.addEventListener('DOMContentLoaded', () => {
+            renderClassicGrid();
+            renderMasonryGrid();
+            renderSlider();
+            renderFuturisticGrid();
+            renderGlassGrid();
+            renderMinimalGrid();
+            renderMagazineLayout();
+            renderBubbleChat();
+            renderCarousel();
+            renderTimeline();
+            renderGrouped();
+            renderVideoGrid();
+            renderStatsLayout();
+            renderSocialWall();
+            renderNeonGrid();
+            renderPeekCarousel();
+            renderLineStarsGrid();
+            renderPolaroidGrid();
+            renderBrutalistGrid();
+            renderMeshGrid();
+            renderEditorial();
+            renderSplitGrid();
+            renderFloatGrid();
+            renderSketchGrid();
+            renderStackedCards();
+        });
+    </script>
+</body>
+</html>
