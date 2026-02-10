@@ -3063,6 +3063,1018 @@
         @media (max-width: 900px) {
             .stacked-card { width: 300px; padding: 24px; }
         }
+
+        /* ==========================================
+           SECTION 26: Soft Pastel (Hand-drawn stars)
+           ========================================== */
+        .section-pastel {
+            background: linear-gradient(180deg, #fef6f0 0%, #f0f4f8 100%);
+        }
+
+        .section-pastel .section-title {
+            color: #5d6b7a;
+        }
+
+        .section-pastel .section-badge {
+            background: #e8d5c4;
+            color: #8b7355;
+        }
+
+        .pastel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 28px;
+        }
+
+        .pastel-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 24px rgba(93, 107, 122, 0.08);
+            border: 1px solid rgba(232, 213, 196, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .pastel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(93, 107, 122, 0.12);
+        }
+
+        .pastel-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .pastel-avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e8d5c4;
+        }
+
+        .pastel-info h4 {
+            color: #5d6b7a;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .pastel-info span {
+            color: #a8b5c4;
+            font-size: 13px;
+        }
+
+        .pastel-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        /* Hand-drawn wobbly star */
+        .star-handdrawn {
+            width: 22px;
+            height: 22px;
+            position: relative;
+        }
+
+        .star-handdrawn svg {
+            width: 100%;
+            height: 100%;
+            stroke: #d4a574;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .star-handdrawn.filled svg {
+            fill: rgba(212, 165, 116, 0.25);
+            stroke: #c4956a;
+        }
+
+        .pastel-text {
+            color: #6b7a8a;
+            font-size: 15px;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .pastel-date {
+            color: #b8c4d0;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           SECTION 27: Earthy Tones (Organic stars)
+           ========================================== */
+        .section-earthy {
+            background: #f5f0eb;
+        }
+
+        .section-earthy .section-title {
+            color: #5c4d3c;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-earthy .section-badge {
+            background: #8b9d77;
+            color: #fff;
+        }
+
+        .earthy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .earthy-card {
+            background: #fffcf8;
+            border-radius: 16px;
+            padding: 28px;
+            border-left: 4px solid #c9a87c;
+            box-shadow: 0 2px 16px rgba(92, 77, 60, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .earthy-card:hover {
+            box-shadow: 0 8px 32px rgba(92, 77, 60, 0.1);
+        }
+
+        .earthy-stars {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Organic imperfect star */
+        .star-organic {
+            width: 20px;
+            height: 20px;
+        }
+
+        .star-organic svg {
+            width: 100%;
+            height: 100%;
+            stroke: #8b9d77;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .star-organic.filled svg {
+            fill: rgba(139, 157, 119, 0.2);
+            stroke: #6b7d57;
+        }
+
+        .earthy-text {
+            color: #5c4d3c;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .earthy-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #e8e0d5;
+        }
+
+        .earthy-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .earthy-name {
+            color: #5c4d3c;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .earthy-role {
+            color: #a89880;
+            font-size: 13px;
+        }
+
+        /* ==========================================
+           SECTION 28: Faded Vintage
+           ========================================== */
+        .section-faded {
+            background: #e8e4df;
+        }
+
+        .section-faded .section-title {
+            color: #6b6560;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        .section-faded .section-badge {
+            background: transparent;
+            border: 1px solid #a89f95;
+            color: #8b8279;
+        }
+
+        .faded-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .faded-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faded-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .faded-stars {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        /* Vintage faded star */
+        .star-vintage {
+            width: 18px;
+            height: 18px;
+        }
+
+        .star-vintage svg {
+            width: 100%;
+            height: 100%;
+            stroke: #b5a99a;
+            stroke-width: 1.2;
+            fill: none;
+            opacity: 0.8;
+        }
+
+        .star-vintage.filled svg {
+            fill: rgba(181, 169, 154, 0.3);
+            stroke: #9a8e7f;
+        }
+
+        .faded-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            color: #c5bdb3;
+            line-height: 0.5;
+            margin-bottom: 16px;
+        }
+
+        .faded-text {
+            color: #6b6560;
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .faded-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faded-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: sepia(20%) saturate(80%);
+            border: 2px solid #d5cdc3;
+        }
+
+        .faded-name {
+            color: #5a554f;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .faded-role {
+            color: #a89f95;
+            font-size: 13px;
+        }
+
+        /* ==========================================
+           SECTION 29: Nordic Minimal
+           ========================================== */
+        .section-nordic {
+            background: #f7f6f3;
+        }
+
+        .section-nordic .section-title {
+            color: #3d4449;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+
+        .section-nordic .section-badge {
+            background: #dde4e0;
+            color: #5a6670;
+        }
+
+        .nordic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .nordic-card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .nordic-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .nordic-stars {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        /* Clean minimal star */
+        .star-nordic {
+            width: 16px;
+            height: 16px;
+        }
+
+        .star-nordic svg {
+            width: 100%;
+            height: 100%;
+            stroke: #a8b5b0;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-nordic.filled svg {
+            fill: rgba(168, 181, 176, 0.3);
+            stroke: #7a8a84;
+        }
+
+        .nordic-text {
+            color: #4a5258;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .nordic-divider {
+            width: 40px;
+            height: 2px;
+            background: #dde4e0;
+            margin-bottom: 20px;
+        }
+
+        .nordic-author h4 {
+            color: #3d4449;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .nordic-author span {
+            color: #8a9499;
+            font-size: 13px;
+        }
+
+        /* ==========================================
+           SECTION 30: Ink Wash (Asian-inspired)
+           ========================================== */
+        .section-inkwash {
+            background: linear-gradient(180deg, #f8f7f4 0%, #edeae5 100%);
+        }
+
+        .section-inkwash .section-title {
+            color: #3a3632;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .section-inkwash .section-badge {
+            background: transparent;
+            border: 1px solid #3a3632;
+            color: #3a3632;
+        }
+
+        .inkwash-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 48px;
+        }
+
+        .inkwash-card {
+            position: relative;
+            padding: 40px;
+            background: transparent;
+        }
+
+        .inkwash-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(58, 54, 50, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .inkwash-card::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(58, 54, 50, 0.08);
+            border-radius: 2px;
+            z-index: -1;
+        }
+
+        .inkwash-stars {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        /* Brush stroke star */
+        .star-ink {
+            width: 20px;
+            height: 20px;
+        }
+
+        .star-ink svg {
+            width: 100%;
+            height: 100%;
+            stroke: #5a5550;
+            stroke-width: 1;
+            fill: none;
+            opacity: 0.6;
+        }
+
+        .star-ink.filled svg {
+            fill: rgba(58, 54, 50, 0.1);
+            stroke: #3a3632;
+            opacity: 1;
+        }
+
+        .inkwash-text {
+            color: #4a4640;
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 32px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .inkwash-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .inkwash-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(30%);
+        }
+
+        .inkwash-name {
+            color: #3a3632;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .inkwash-role {
+            color: #8a8580;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* ==========================================
+           SECTION 31: Dusty Rose
+           ========================================== */
+        .section-dustyrose {
+            background: linear-gradient(135deg, #f5e6e0 0%, #e8dcd5 100%);
+        }
+
+        .section-dustyrose .section-title {
+            color: #7a5c5c;
+        }
+
+        .section-dustyrose .section-badge {
+            background: #c9a5a0;
+            color: #fff;
+        }
+
+        .dustyrose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .dustyrose-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid rgba(201, 165, 160, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dustyrose-card:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-4px);
+        }
+
+        .dustyrose-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .dustyrose-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4b5b0;
+        }
+
+        .dustyrose-info h4 {
+            color: #6a4c4c;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .dustyrose-info span {
+            color: #a08888;
+            font-size: 13px;
+        }
+
+        .dustyrose-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        /* Soft rose star */
+        .star-rose {
+            width: 20px;
+            height: 20px;
+        }
+
+        .star-rose svg {
+            width: 100%;
+            height: 100%;
+            stroke: #c9a5a0;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-rose.filled svg {
+            fill: rgba(201, 165, 160, 0.3);
+            stroke: #a88580;
+        }
+
+        .dustyrose-text {
+            color: #6a5858;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ==========================================
+           SECTION 32: Sage & Stone
+           ========================================== */
+        .section-sage {
+            background: #e8ebe4;
+        }
+
+        .section-sage .section-title {
+            color: #4a5548;
+        }
+
+        .section-sage .section-badge {
+            background: #8fa388;
+            color: #fff;
+        }
+
+        .sage-masonry {
+            columns: 3;
+            column-gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .sage-masonry { columns: 2; }
+        }
+
+        @media (max-width: 600px) {
+            .sage-masonry { columns: 1; }
+        }
+
+        .sage-card {
+            break-inside: avoid;
+            background: #f5f7f3;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(143, 163, 136, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sage-card:hover {
+            background: #fff;
+            box-shadow: 0 8px 32px rgba(74, 85, 72, 0.08);
+        }
+
+        .sage-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        /* Natural sage star */
+        .star-sage {
+            width: 18px;
+            height: 18px;
+        }
+
+        .star-sage svg {
+            width: 100%;
+            height: 100%;
+            stroke: #8fa388;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-sage.filled svg {
+            fill: rgba(143, 163, 136, 0.25);
+            stroke: #6b8065;
+        }
+
+        .sage-text {
+            color: #4a5548;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .sage-footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px dashed rgba(143, 163, 136, 0.3);
+        }
+
+        .sage-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sage-name {
+            color: #4a5548;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .sage-role {
+            color: #7a8a75;
+            font-size: 12px;
+        }
+
+        /* ==========================================
+           SECTION 33: Muted Ocean
+           ========================================== */
+        .section-ocean {
+            background: linear-gradient(180deg, #e5eaed 0%, #d5dee3 100%);
+        }
+
+        .section-ocean .section-title {
+            color: #4a5d6a;
+        }
+
+        .section-ocean .section-badge {
+            background: #7a9aa8;
+            color: #fff;
+        }
+
+        .ocean-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+            gap: 32px;
+        }
+
+        .ocean-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 4px 20px rgba(74, 93, 106, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ocean-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7a9aa8, #a8c4cc);
+        }
+
+        .ocean-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .ocean-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .ocean-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            object-fit: cover;
+        }
+
+        .ocean-name {
+            color: #3a4d5a;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .ocean-role {
+            color: #8a9da8;
+            font-size: 13px;
+        }
+
+        .ocean-stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        /* Wave-inspired star */
+        .star-ocean {
+            width: 18px;
+            height: 18px;
+        }
+
+        .star-ocean svg {
+            width: 100%;
+            height: 100%;
+            stroke: #7a9aa8;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-ocean.filled svg {
+            fill: rgba(122, 154, 168, 0.2);
+            stroke: #5a7a88;
+        }
+
+        .ocean-text {
+            color: #4a5d6a;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ==========================================
+           SECTION 34: Terracotta Warm
+           ========================================== */
+        .section-terracotta {
+            background: #f2ebe3;
+        }
+
+        .section-terracotta .section-title {
+            color: #8b5a3c;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-terracotta .section-badge {
+            background: #c4856c;
+            color: #fff;
+        }
+
+        .terracotta-flex {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .terracotta-card {
+            flex: 0 0 360px;
+            background: #fffcf8;
+            border-radius: 24px;
+            padding: 32px;
+            scroll-snap-align: start;
+            border: 2px solid #e8d5c8;
+            transition: all 0.3s ease;
+        }
+
+        .terracotta-card:hover {
+            border-color: #c4856c;
+            box-shadow: 0 12px 40px rgba(139, 90, 60, 0.1);
+        }
+
+        .terracotta-stars {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Warm terracotta star */
+        .star-terra {
+            width: 22px;
+            height: 22px;
+        }
+
+        .star-terra svg {
+            width: 100%;
+            height: 100%;
+            stroke: #c4856c;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-terra.filled svg {
+            fill: rgba(196, 133, 108, 0.2);
+            stroke: #a86b50;
+        }
+
+        .terracotta-text {
+            color: #6b4a38;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .terracotta-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .terracotta-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e8d5c8;
+        }
+
+        .terracotta-name {
+            color: #6b4a38;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .terracotta-role {
+            color: #a8907c;
+            font-size: 13px;
+        }
+
+        /* ==========================================
+           SECTION 35: Lavender Mist
+           ========================================== */
+        .section-lavender {
+            background: linear-gradient(135deg, #f0eef5 0%, #e8e4ef 100%);
+        }
+
+        .section-lavender .section-title {
+            color: #6a5c7a;
+        }
+
+        .section-lavender .section-badge {
+            background: #a898b8;
+            color: #fff;
+        }
+
+        .lavender-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .lavender-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(168, 152, 184, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .lavender-card:hover {
+            background: #fff;
+            box-shadow: 0 16px 48px rgba(106, 92, 122, 0.1);
+            transform: translateY(-6px);
+        }
+
+        .lavender-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .lavender-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #c8bcd8;
+        }
+
+        .lavender-info h4 {
+            color: #5a4c6a;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .lavender-info span {
+            color: #9a8aaa;
+            font-size: 13px;
+        }
+
+        .lavender-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        /* Soft lavender star */
+        .star-lavender {
+            width: 18px;
+            height: 18px;
+        }
+
+        .star-lavender svg {
+            width: 100%;
+            height: 100%;
+            stroke: #a898b8;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .star-lavender.filled svg {
+            fill: rgba(168, 152, 184, 0.25);
+            stroke: #8878a0;
+        }
+
+        .lavender-text {
+            color: #5a4c6a;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* Hand-drawn star SVG paths (imperfect/organic) */
+        .star-svg-handdrawn {
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
     </style>
 </head>
 <body>
@@ -3409,6 +4421,126 @@
                 <p class="section-subtitle">Fan through stacked testimonials</p>
             </div>
             <div class="stacked-container" id="stacked-container"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 26: Soft Pastel -->
+    <section class="section section-pastel">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Soft Pastel</span>
+                <h2 class="section-title">Gentle Words</h2>
+                <p class="section-subtitle">Soft colors and hand-drawn warmth</p>
+            </div>
+            <div class="pastel-grid" id="pastel-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 27: Earthy Tones -->
+    <section class="section section-earthy">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Earthy</span>
+                <h2 class="section-title">Grounded Gratitude</h2>
+                <p class="section-subtitle">Natural tones with organic star accents</p>
+            </div>
+            <div class="earthy-grid" id="earthy-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 28: Faded Vintage -->
+    <section class="section section-faded">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Faded</span>
+                <h2 class="section-title">Timeless Testimonials</h2>
+                <p class="section-subtitle">Washed memories with vintage charm</p>
+            </div>
+            <div class="faded-grid" id="faded-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 29: Nordic Minimal -->
+    <section class="section section-nordic">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Nordic</span>
+                <h2 class="section-title">Scandinavian Simplicity</h2>
+                <p class="section-subtitle">Clean lines, muted tones, pure function</p>
+            </div>
+            <div class="nordic-grid" id="nordic-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 30: Ink Wash -->
+    <section class="section section-inkwash">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Ink Wash</span>
+                <h2 class="section-title">Brushed Sentiments</h2>
+                <p class="section-subtitle">Eastern-inspired elegance and restraint</p>
+            </div>
+            <div class="inkwash-grid" id="inkwash-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 31: Dusty Rose -->
+    <section class="section section-dustyrose">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Dusty Rose</span>
+                <h2 class="section-title">Blushing Praise</h2>
+                <p class="section-subtitle">Warm rose hues with delicate accents</p>
+            </div>
+            <div class="dustyrose-grid" id="dustyrose-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 32: Sage & Stone -->
+    <section class="section section-sage">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Sage</span>
+                <h2 class="section-title">Natural Harmony</h2>
+                <p class="section-subtitle">Earth-inspired greens and organic forms</p>
+            </div>
+            <div class="sage-masonry" id="sage-masonry"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 33: Muted Ocean -->
+    <section class="section section-ocean">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Ocean</span>
+                <h2 class="section-title">Coastal Calm</h2>
+                <p class="section-subtitle">Serene blues and tranquil waters</p>
+            </div>
+            <div class="ocean-grid" id="ocean-grid"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 34: Terracotta Warm -->
+    <section class="section section-terracotta">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Terracotta</span>
+                <h2 class="section-title">Warm Earth</h2>
+                <p class="section-subtitle">Sun-baked warmth and artisan touch</p>
+            </div>
+            <div class="terracotta-flex" id="terracotta-flex"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 35: Lavender Mist -->
+    <section class="section section-lavender">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">Lavender</span>
+                <h2 class="section-title">Purple Dreams</h2>
+                <p class="section-subtitle">Soft lavender with ethereal grace</p>
+            </div>
+            <div class="lavender-grid" id="lavender-grid"></div>
         </div>
     </section>
 
@@ -4268,6 +5400,204 @@
             });
         }
 
+        // Helper: Create hand-drawn stars with organic SVG path
+        function createHandDrawnStars(rating, className = 'star-handdrawn', strokeColor = '#d4a574', fillColor = 'rgba(212, 165, 116, 0.25)') {
+            let stars = '';
+            // Slightly imperfect star path for hand-drawn feel
+            const starPath = 'M12 2.5 L14.5 8.5 L21 9.5 L16.5 14 L17.5 21 L12 17.5 L6.5 21 L7.5 14 L3 9.5 L9.5 8.5 Z';
+            for (let i = 1; i <= 5; i++) {
+                const filled = i <= rating ? 'filled' : '';
+                stars += `<span class="${className} ${filled}">
+                    <svg viewBox="0 0 24 24">
+                        <path d="${starPath}" class="star-svg-handdrawn"/>
+                    </svg>
+                </span>`;
+            }
+            return stars;
+        }
+
+        // Section 26: Pastel Grid
+        function renderPastelGrid() {
+            const container = document.getElementById('pastel-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="pastel-card">
+                    <div class="pastel-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="pastel-avatar">
+                        <div class="pastel-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role}</span>
+                        </div>
+                    </div>
+                    <div class="pastel-stars">${createHandDrawnStars(review.rating, 'star-handdrawn')}</div>
+                    <p class="pastel-text">"${review.text}"</p>
+                    <span class="pastel-date">${review.date}</span>
+                </div>
+            `).join('');
+        }
+
+        // Section 27: Earthy Grid
+        function renderEarthyGrid() {
+            const container = document.getElementById('earthy-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="earthy-card">
+                    <div class="earthy-stars">${createHandDrawnStars(review.rating, 'star-organic')}</div>
+                    <p class="earthy-text">"${review.text}"</p>
+                    <div class="earthy-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="earthy-avatar">
+                        <div>
+                            <div class="earthy-name">${review.name}</div>
+                            <div class="earthy-role">${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 28: Faded Grid
+        function renderFadedGrid() {
+            const container = document.getElementById('faded-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="faded-card">
+                    <div class="faded-stars">${createHandDrawnStars(review.rating, 'star-vintage')}</div>
+                    <div class="faded-quote">"</div>
+                    <p class="faded-text">${review.text}</p>
+                    <div class="faded-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="faded-avatar">
+                        <div>
+                            <div class="faded-name">${review.name}</div>
+                            <div class="faded-role">${review.role} at ${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 29: Nordic Grid
+        function renderNordicGrid() {
+            const container = document.getElementById('nordic-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="nordic-card">
+                    <div class="nordic-stars">${createHandDrawnStars(review.rating, 'star-nordic')}</div>
+                    <p class="nordic-text">"${review.text}"</p>
+                    <div class="nordic-divider"></div>
+                    <div class="nordic-author">
+                        <h4>${review.name}</h4>
+                        <span>${review.company}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 30: Ink Wash Grid
+        function renderInkWashGrid() {
+            const container = document.getElementById('inkwash-grid');
+            container.innerHTML = reviews.slice(0, 4).map(review => `
+                <div class="inkwash-card">
+                    <div class="inkwash-stars">${createHandDrawnStars(review.rating, 'star-ink')}</div>
+                    <p class="inkwash-text">"${review.text}"</p>
+                    <div class="inkwash-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="inkwash-avatar">
+                        <div>
+                            <div class="inkwash-name">${review.name}</div>
+                            <div class="inkwash-role">${review.role}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 31: Dusty Rose Grid
+        function renderDustyRoseGrid() {
+            const container = document.getElementById('dustyrose-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="dustyrose-card">
+                    <div class="dustyrose-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="dustyrose-avatar">
+                        <div class="dustyrose-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role}</span>
+                        </div>
+                    </div>
+                    <div class="dustyrose-stars">${createHandDrawnStars(review.rating, 'star-rose')}</div>
+                    <p class="dustyrose-text">"${review.text}"</p>
+                </div>
+            `).join('');
+        }
+
+        // Section 32: Sage Masonry
+        function renderSageMasonry() {
+            const container = document.getElementById('sage-masonry');
+            container.innerHTML = reviews.map(review => `
+                <div class="sage-card">
+                    <div class="sage-stars">${createHandDrawnStars(review.rating, 'star-sage')}</div>
+                    <p class="sage-text">"${review.text}"</p>
+                    <div class="sage-footer">
+                        <img src="${review.avatar}" alt="${review.name}" class="sage-avatar">
+                        <div>
+                            <div class="sage-name">${review.name}</div>
+                            <div class="sage-role">${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 33: Ocean Grid
+        function renderOceanGrid() {
+            const container = document.getElementById('ocean-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="ocean-card">
+                    <div class="ocean-header">
+                        <div class="ocean-author">
+                            <img src="${review.avatar}" alt="${review.name}" class="ocean-avatar">
+                            <div>
+                                <div class="ocean-name">${review.name}</div>
+                                <div class="ocean-role">${review.role}</div>
+                            </div>
+                        </div>
+                        <div class="ocean-stars">${createHandDrawnStars(review.rating, 'star-ocean')}</div>
+                    </div>
+                    <p class="ocean-text">"${review.text}"</p>
+                </div>
+            `).join('');
+        }
+
+        // Section 34: Terracotta Flex
+        function renderTerracottaFlex() {
+            const container = document.getElementById('terracotta-flex');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="terracotta-card">
+                    <div class="terracotta-stars">${createHandDrawnStars(review.rating, 'star-terra')}</div>
+                    <p class="terracotta-text">"${review.text}"</p>
+                    <div class="terracotta-author">
+                        <img src="${review.avatar}" alt="${review.name}" class="terracotta-avatar">
+                        <div>
+                            <div class="terracotta-name">${review.name}</div>
+                            <div class="terracotta-role">${review.company}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Section 35: Lavender Grid
+        function renderLavenderGrid() {
+            const container = document.getElementById('lavender-grid');
+            container.innerHTML = reviews.slice(0, 6).map(review => `
+                <div class="lavender-card">
+                    <div class="lavender-header">
+                        <img src="${review.avatar}" alt="${review.name}" class="lavender-avatar">
+                        <div class="lavender-info">
+                            <h4>${review.name}</h4>
+                            <span>${review.role}</span>
+                        </div>
+                    </div>
+                    <div class="lavender-stars">${createHandDrawnStars(review.rating, 'star-lavender')}</div>
+                    <p class="lavender-text">"${review.text}"</p>
+                </div>
+            `).join('');
+        }
+
         // Initialize all sections
         document.addEventListener('DOMContentLoaded', () => {
             renderClassicGrid();
@@ -4295,6 +5625,16 @@
             renderFloatGrid();
             renderSketchGrid();
             renderStackedCards();
+            renderPastelGrid();
+            renderEarthyGrid();
+            renderFadedGrid();
+            renderNordicGrid();
+            renderInkWashGrid();
+            renderDustyRoseGrid();
+            renderSageMasonry();
+            renderOceanGrid();
+            renderTerracottaFlex();
+            renderLavenderGrid();
         });
     </script>
 </body>

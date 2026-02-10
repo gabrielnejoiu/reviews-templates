@@ -1,17 +1,18 @@
 # Review Templates Showcase
 
-A comprehensive collection of **25 stunning review/testimonial design templates** built with pure HTML, CSS, and JavaScript. Perfect for designers, developers, and anyone looking for inspiration or ready-to-use review components.
+A comprehensive collection of **35 stunning review/testimonial design templates** built with pure HTML, CSS, and JavaScript. Perfect for designers, developers, and anyone looking for inspiration or ready-to-use review components.
 
 ![Review Templates Preview](preview.png)
 
 ## Features
 
-- **25 Unique Designs** - From minimal to futuristic, classic to avant-garde
+- **35 Unique Designs** - From minimal to futuristic, classic to avant-garde
 - **Pure HTML/CSS/JS** - No dependencies, no frameworks
 - **Fully Responsive** - Works on all screen sizes
 - **Dark & Light Themes** - Multiple background variations
 - **Interactive Elements** - Carousels, sliders, hover effects
-- **Line-Drawn Stars** - Artistic outlined star ratings
+- **Hand-Drawn Stars** - Artistic outlined star ratings with organic feel
+- **Modern Faded Palettes** - Soft pastels, earthy tones, muted colors
 - **Copy & Customize** - Easy to extract and modify
 
 ## Template Styles
@@ -43,6 +44,21 @@ A comprehensive collection of **25 stunning review/testimonial design templates*
 | 23 | 3D Floating | Dark Blue | Perspective depth effects |
 | 24 | Handwritten/Sketch | Paper | Hand-crafted doodle aesthetic |
 | 25 | Stacked Cards | Black | Click-through card deck |
+
+### Hand-Drawn Star Templates (Modern Flat & Faded)
+
+| # | Style | Palette | Description |
+|---|-------|---------|-------------|
+| 26 | Soft Pastel | Cream/Peach | Gentle warmth with organic stars |
+| 27 | Earthy Tones | Sage/Terracotta | Natural colors, left border accent |
+| 28 | Faded Vintage | Sepia/Gray | Washed-out nostalgic feel |
+| 29 | Nordic Minimal | Cool Gray | Scandinavian simplicity |
+| 30 | Ink Wash | Charcoal/Cream | Asian-inspired brush aesthetics |
+| 31 | Dusty Rose | Pink/Mauve | Warm blush tones |
+| 32 | Sage & Stone | Green/Gray | Masonry with natural greens |
+| 33 | Muted Ocean | Blue/Teal | Coastal calm with wave accents |
+| 34 | Terracotta | Orange/Cream | Sun-baked warmth, horizontal scroll |
+| 35 | Lavender Mist | Purple/Lilac | Soft ethereal purple dreams |
 
 ## Quick Start
 
@@ -85,9 +101,22 @@ The showcase uses three font families:
 - **Space Grotesk** - Modern geometric
 
 ### Star Ratings
-Two star styles are available:
-- `createStars()` - Filled solid stars
-- `createLineStars()` - Outlined artistic stars
+Three star styles are available:
+- `createStars()` - Filled solid stars (classic yellow)
+- `createLineStars()` - Outlined artistic stars (clean lines)
+- `createHandDrawnStars()` - Organic imperfect stars (hand-crafted feel)
+
+Each hand-drawn template uses its own color-coordinated star variant:
+- `.star-handdrawn` - Warm pastel peach
+- `.star-organic` - Earthy sage green
+- `.star-vintage` - Faded sepia tone
+- `.star-nordic` - Cool minimal gray
+- `.star-ink` - Brushstroke charcoal
+- `.star-rose` - Dusty pink
+- `.star-sage` - Natural green
+- `.star-ocean` - Muted teal
+- `.star-terra` - Warm terracotta
+- `.star-lavender` - Soft purple
 
 ## Browser Support
 
